@@ -1,0 +1,61 @@
+body {
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+#box {
+    width: 700px;
+    height: 100px;
+    background-color: white;
+    border-radius: 30px;
+    position: absolute;
+    bottom: 5%;
+    left: 50%;
+    transform: translateX(-50%);
+    box-shadow: 5px 5px 5px gray;
+}
+
+#button1 {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    position: absolute;
+    left: 5%; 
+    bottom: 15px; 
+}
+
+#button2 {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    position: absolute;
+    left: 25%; 
+    bottom: 15px; 
+}
+
+#button3 {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    position: absolute;
+    left: 45%; 
+    bottom: 15px; 
+}
+
+#button4 {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    position: absolute;
+    left: 65%; 
+    bottom: 15px; 
+}
+
+#button5 {
+    width: 70px;
+    height: 70px;
+    border-radius: 15px;
+    position: absolute;
+    left: 85%; 
+    bottom: 15px; 
+}
