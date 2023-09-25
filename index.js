@@ -11,17 +11,33 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize(w, h);
 document.body.appendChild(renderer.domElement);
 
+// 스카이박스 텍스처 이미지 경로
+const skyboxTextureUrls = [
+  './assets/skybox/posx.jpg',   // right
+  './assets/skybox/negx.jpg',    // left
+  './assets/skybox/posy.jpg',     // top
+  './assets/skybox/negy.jpg',  // bottom
+  './assets/skybox/posz.jpg',   // front
+  './assets/skybox/negz.jpg'     // back
+];
+
+// 스카이박스 텍스처 로드
+const skyboxTexture = new THREE.CubeTextureLoader().load(skyboxTextureUrls);
+scene.background = skyboxTexture;
+
 camera.position.set(10, 10, 15); // 카메라 위치 설정
 const controls = new OrbitControls(camera, renderer.domElement); // 카메라 사용
 controls.update();
 
 function init(geometry) {
-  const texture = new THREE.TextureLoader().load('./assets/white-texture.jpg'); // 텍스쳐 불러오기
+  const texture = new THREE.TextureLoader().load('./assets/obj/white-texture.jpg'); // 텍스쳐 불러오기
   
   const material = new THREE.MeshPhongMaterial({ map: texture }); // 3D 모델에 텍스쳐 매핑
   const mesh = new THREE.Mesh(geometry, material);
   scene.add(mesh);
 
+  mesh.position.set(0, 0, 0); // 원하는 위치로 조정
+  
   const sunlight = new THREE.DirectionalLight(0xffffff); // 직사광 생성(16진수 : 조명의 색상)
   sunlight.position.y = 2; // 조명의 위치
   scene.add(sunlight);
@@ -47,7 +63,7 @@ function init(geometry) {
 }
 
 const loader = new OBJLoader();
-loader.load("./assets/Cottage_FREE.obj", (obj) => init(obj.children[0].geometry) ); // obj 파일 불러오기
+loader.load("./assets/obj/Cottage_FREE.obj", (obj) => init(obj.children[0].geometry) ); // obj 파일 불러오기
 
 // 창 크기에 따른 사이즈 설정
 function handleWindowResize () {
