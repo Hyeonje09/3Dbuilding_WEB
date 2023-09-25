@@ -68,3 +68,12 @@ body {
     left: 85%; 
     bottom: 15px; 
 }
+
+#button5 img {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-52.5%, -50%); 
+    width: 82%;
+    height: 83%;
+}
