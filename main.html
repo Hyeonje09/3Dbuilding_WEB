@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="main.css">
     <title>main</title>
 </head>
-<body>
+<body>  
     <div class="model">
         <script type="module" src="index.js"></script>
     </div>
@@ -18,5 +18,23 @@
         <button id="buttonicon"> <img src="./icon/smile.png" alt="임시"> </button>
         <button id="buttonicon" onclick="window.resetCameraControl()"> <img src="./icon/reset.png" alt="리셋"> </button>
     </li>
+
+    <div id="filebox" class="filebox_obj">
+        <input class="upload-name" value="obj 파일 첨부" placeholder="첨부파일">
+        <label for="file">파일찾기</label> 
+        <input type="file" id="file">
+    </div>
+    
+    <div id="filebox" class="filebox_texture">
+        <input class="upload-name" value="텍스쳐 첨부" placeholder="첨부파일">
+        <label for="file">파일찾기</label> 
+        <input type="file" id="file">
+    </div>
+
+    <div id="filebox" class="filebox_skybox">
+        <input class="upload-name" value="skybox 첨부" placeholder="첨부파일">
+        <label for="file">파일찾기</label> 
+        <input type="file" id="file">
+    </div>
     
 </html>
