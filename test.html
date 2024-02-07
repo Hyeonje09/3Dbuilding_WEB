@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Viewstl Javascript Plugin - Simple Example</title>
+</head>
+
+<body>
+  <div id="stl_cont" style="width:1000px;height:1000px;margin:0 auto;"></div>
+
+  <script src="stl_viewer.min.js"></script>
+  <script>
+    // URL에서 파일 정보 가져오기
+    var urlParams = new URLSearchParams(window.location.search);
+    var filename = urlParams.get("filename");
+    var destination = urlParams.get("destination");
+
+    // stl_viewer로 파일 로딩
+    var stl_viewer = new StlViewer(document.getElementById("stl_cont"), {
+      models: [{ filename: destination + '/' + filename }],
+    });
+  </script>
+</body>
+</html>
+  
